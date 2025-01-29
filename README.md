@@ -1,20 +1,4 @@
-# **Course:** CS69099- Capstone Project
 # **Product Name: AutoCorrect+ (AI-Enhanced Descriptive Answer Evaluation)**
-
-**Proposal Prepared By:**
-
-Bhanu Siva Kumar Komanna - bkomman1@kent.edu - 811252220 
-
-Mani Surya Teja Kota - mkota1@kent.edu - 811262686 
-
-Veeraraghava Raju Lolabhattu - klolabha@kent.edu - 811301662 
-
-Gayathri Devi Atluri - gatluri@kent.edu - 811256395 
-
-Harika Malneedi - hmalneed@kent.edu -811255562 
-
-Sai Haritha Udatha - sudatha@kent.edu – 811238202 
-
 
 ## **Product Description** ##
 
@@ -26,6 +10,29 @@ Moreover, AutoCorrect+ is integrated with the Django framework, which provides a
 
 The aim of AutoCorrect+ is to enhance traditional manual grading methods by introducing efficiency, accuracy, and scalability to educational assessment systems using  NLP techniques and user-friendly interfaces.
 
-## **Project Code**
+The first step involves preparing the textual data by tokenizing the answers into individual words . Additionally, common stop words (e.g., "the," "and," "a") are removed from the tokenized texts to focus on the more meaningful words.
 
-https://github.com/gayathrideviatluri/Capstone-Team1/tree/main/answer_evaluation
+The preprocessed textual data is then converted into numerical vectors using the CountVectorizer from the scikit-learn library. This vectorization process captures the importance of words through their frequencies, allowing for a numerical representation of the text that can be used for similarity calculations.
+
+Two complementary techniques are employed to measure the semantic similarity between a student's answer and the predefined correct answer:
+Cosine similarity: This measure calculates the cosine of the angle between the answer vectors, indicating the degree of text similarity. Cosine similarity ranges from -1 to 1, with 1 indicating that the vectors are identical, and -1 indicating that they are diametrically opposed.
+
+Jaccard Distance/Similarity: This measure calculates the distance or similarity between the unique sets of words in the two answers. The Jaccard distance is first computed, and then converted to a similarity score ranging from 0 to 1, where 1 indicates that the sets are identical, and 0 indicates that they are completely different.
+
+The similarity scores obtained from the cosine similarity and Jaccard similarity measures are mapped to predefined grading ranges. These individual scores are then aggregated to derive a total score for the student's answer.
+
+The application is developed using the Django web framework, which provides a user-friendly interface for administrators to manage user registrations, tests, and courses. Students can also access this interface to attempt exams and view their results.
+
+CountVectorizer: CountVectorizer transforms text data into a numerical representation, allowing us to analyze and process it effectively.
+Jaccard Distance: Think of this as a measure of how similar two sets are. Jaccard Distance helps us quantify the similarity between two texts based on the intersection and union of their words.
+Cosine Similarity: Imagine it as a way to measure the angle between two vectors in a multi-dimensional space. Cosine Similarity helps us measure the similarity between two texts regardless of their size, making it a powerful tool for text analysis.
+
+You can use Visual Studio code for frontend peojects. You need to install VSCode, ensure all plugins are installed successfully, and install Angular extension pack in extensions. 
+Step -1 – In git, codespace install angular extensions pack
+ ![image](https://github.com/user-attachments/assets/1694bb45-3ed9-487a-9d08-5eb901dd8268)
+
+Step 2 - Go to your project repo and clone the repository into the git code space go to the integrated terminal and install angular cli use npm install -g @angular/cli
+
+And check whether angular cli is installed successfully or not using ng --help
+
+
